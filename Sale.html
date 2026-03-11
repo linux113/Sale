@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trending Sale - Get Premium Dress in Minimum Cost</title>
+<meta name="description" content="Trending Sale - Get premium dress in minimum cost. Shop sarees, suits and more from Thane, Maharashtra.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#e91e63;--primary-dark:#c2185b;--primary-light:#fce4ec;--secondary:#7b1fa2;--accent:#ff6f00;--bg:#fafafa;--card:#fff;--text:#212121;--text-light:#757575;--border:#e0e0e0;--success:#4caf50;--shadow:0 2px 12px rgba(0,0,0,.1);--shadow-lg:0 8px 32px rgba(0,0,0,.15);--radius:12px;--radius-sm:8px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+
+/* Header */
+.header{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:0;position:sticky;top:0;z-index:100;box-shadow:var(--shadow-lg)}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;max-width:1200px;margin:0 auto}
+.logo-section h1{font-size:1.5rem;font-weight:800;letter-spacing:-.5px;text-transform:uppercase}
+.logo-section p{font-size:.75rem;opacity:.9;font-weight:300;letter-spacing:.5px}
+.header-actions{display:flex;gap:12px;align-items:center}
+.header-btn{background:rgba(255,255,255,.2);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:all .3s;position:relative;backdrop-filter:blur(10px)}
+.header-btn:hover{background:rgba(255,255,255,.35);transform:scale(1.1)}
+.header-cart-count{position:absolute;top:-4px;right:-4px;background:var(--accent);color:#fff;font-size:.65rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--primary)}
+.location-bar{background:rgba(0,0,0,.15);padding:6px 16px;text-align:center;font-size:.7rem;letter-spacing:.3px}
+.location-bar span{opacity:.9}
+
+/* Announcement */
+.announcement{background:linear-gradient(90deg,var(--accent),#ff8f00);color:#fff;text-align:center;padding:8px 16px;font-size:.75rem;font-weight:600;letter-spacing:.3px}
+.announcement span{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
+
+/* Category Filter */
+.category-section{padding:16px;max-width:1200px;margin:0 auto}
+.category-scroll{display:flex;gap:8px;overflow-x:auto;padding:4px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.category-scroll::-webkit-scrollbar{display:none}
+.cat-btn{flex-shrink:0;padding:8px 20px;border-radius:25px;border:2px solid var(--border);background:var(--card);color:var(--text);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .3s;white-space:nowrap}
+.cat-btn.active,.cat-btn:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-2px);box-shadow:0 4px 15px rgba(233,30,99,.3)}
+
+/* Search */
+.search-section{padding:0 16px 12px;max-width:1200px;margin:0 auto}
+.search-box{width:100%;padding:12px 16px 12px 44px;border:2px solid var(--border);border-radius:var(--radius);font-size:.9rem;background:var(--card);transition:all .3s;outline:none}
+.search-box:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-light)}
+.search-wrap{position:relative}
+.search-wrap::before{content:"🔍";position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1rem}
+
+/* Products Grid */
+.products-section{padding:0 16px 100px;max-width:1200px;margin:0 auto}
+.section-title{font-size:1.2rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.section-title::before{content:"";width:4px;height:24px;background:var(--primary);border-radius:2px}
+.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.product-card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .3s;position:relative;animation:fadeInUp .5s ease both}
+.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.product-badge{position:absolute;top:8px;left:8px;background:var(--accent);color:#fff;padding:3px 8px;border-radius:4px;font-size:.6rem;font-weight:700;z-index:2;text-transform:uppercase}
+.product-img-wrap{position:relative;padding-top:120%;overflow:hidden;background:#f5f5f5}
+.product-img-wrap img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.product-card:hover .product-img-wrap img{transform:scale(1.08)}
+.product-info{padding:10px 12px 12px}
+.product-name{font-size:.82rem;font-weight:600;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.3}
+.product-desc{font-size:.68rem;color:var(--text-light);margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.product-price{font-size:1.05rem;font-weight:800;color:var(--primary)}
+.product-price .original{font-size:.72rem;color:var(--text-light);text-decoration:line-through;font-weight:400;margin-left:4px}
+.add-btn{width:100%;padding:10px;border:none;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;font-size:.8rem;font-weight:700;cursor:pointer;transition:all .3s;text-transform:uppercase;letter-spacing:.5px}
+.add-btn:hover{background:linear-gradient(135deg,var(--primary-dark),var(--secondary))}
+.add-btn:active{transform:scale(.96)}
+.add-btn.added{background:var(--success)!important}
+.no-products{grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--text-light)}
+.no-products .emoji{font-size:3rem;margin-bottom:12px}
+
+/* Sticky Cart Button */
+.floating-cart{position:fixed;bottom:80px;right:16px;width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border:none;border-radius:50%;font-size:1.5rem;cursor:pointer;box-shadow:var(--shadow-lg);z-index:99;display:flex;align-items:center;justify-content:center;transition:all .3s;animation:bounceIn .6s}
+.floating-cart:hover{transform:scale(1.1)}
+.floating-cart .cart-count{position:absolute;top:-2px;right:-2px;background:var(--accent);width:22px;height:22px;border-radius:50%;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
+.floating-cart.has-items{animation:cartBounce .6s}
+@keyframes cartBounce{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+/* WhatsApp Button */
+.whatsapp-float{position:fixed;bottom:16px;right:16px;width:56px;height:56px;background:#25d366;border:none;border-radius:50%;font-size:1.7rem;cursor:pointer;box-shadow:var(--shadow-lg);z-index:99;display:flex;align-items:center;justify-content:center;color:#fff;transition:all .3s}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(37,211,102,.4)}
+
+/* Modal Overlay */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;backdrop-filter:blur(4px);animation:fadeIn .3s}
+.modal-overlay.active{display:flex;align-items:flex-end;justify-content:center}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{background:var(--card);width:100%;max-width:500px;max-height:90vh;border-radius:20px 20px 0 0;overflow-y:auto;animation:slideUp .4s ease;position:relative}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--card);z-index:5}
+.modal-header h2{font-size:1.1rem;font-weight:700}
+.modal-close{width:32px;height:32px;border:none;background:var(--bg);border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.modal-close:hover{background:var(--primary-light);color:var(--primary)}
+.modal-body{padding:16px 20px 30px}
+
+/* Cart Styles */
+.cart-empty{text-align:center;padding:40px 20px}
+.cart-empty .emoji{font-size:4rem;margin-bottom:12px}
+.cart-empty p{color:var(--text-light);margin-bottom:16px}
+.cart-empty .shop-btn{display:inline-block;padding:10px 24px;background:var(--primary);color:#fff;border:none;border-radius:var(--radius-sm);font-weight:600;cursor:pointer;text-decoration:none;transition:all .3s}
+.cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);animation:fadeInUp .3s}
+.cart-item-img{width:60px;height:60px;border-radius:var(--radius-sm);overflow:hidden;flex-shrink:0}
+.cart-item-img img{width:100%;height:100%;object-fit:cover}
+.cart-item-details{flex:1;min-width:0}
+.cart-item-name{font-size:.82rem;font-weight:600;margin-bottom:2px}
+.cart-item-price{font-size:.78rem;color:var(--primary);font-weight:700}
+.cart-item-subtotal{font-size:.7rem;color:var(--text-light)}
+.cart-item-actions{display:flex;align-items:center;gap:4px;margin-top:6px}
+.qty-btn{width:28px;height:28px;border:2px solid var(--border);background:var(--card);border-radius:6px;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.qty-btn:hover{border-color:var(--primary);color:var(--primary)}
+.qty-display{width:32px;text-align:center;font-weight:700;font-size:.85rem}
+.remove-btn{margin-left:auto;background:none;border:none;color:#ef5350;font-size:.72rem;cursor:pointer;padding:4px 8px;border-radius:4px;font-weight:600;transition:all .2s}
+.remove-btn:hover{background:#ffebee}
+.cart-summary{margin-top:16px;padding-top:16px;border-top:2px solid var(--border)}
+.cart-summary-row{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.85rem}
+.cart-summary-row.total{font-size:1.1rem;font-weight:800;color:var(--primary);margin-top:8px;padding-top:8px;border-top:2px dashed var(--border)}
+.checkout-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border:none;border-radius:var(--radius);font-size:1rem;font-weight:700;cursor:pointer;margin-top:16px;transition:all .3s;text-transform:uppercase;letter-spacing:.5px}
+.checkout-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(233,30,99,.3)}
+.checkout-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* Payment Section */
+.payment-section{text-align:center;padding:20px 0}
+.qr-code-wrap{display:inline-block;padding:12px;background:#fff;border:3px solid var(--primary);border-radius:var(--radius);margin:12px 0;box-shadow:var(--shadow)}
+.qr-code-wrap img{width:220px;height:auto;border-radius:var(--radius-sm)}
+.payment-instructions{background:var(--primary-light);padding:14px;border-radius:var(--radius-sm);margin:12px 0;font-size:.82rem;line-height:1.6;text-align:left}
+.payment-instructions strong{color:var(--primary)}
+.payment-steps{list-style:none;padding:0;margin:12px 0}
+.payment-steps li{padding:6px 0;font-size:.8rem;display:flex;align-items:flex-start;gap:8px}
+.payment-steps li .step-num{width:22px;height:22px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;flex-shrink:0}
+
+/* Checkout Form */
+.checkout-form{margin-top:16px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:.78rem;font-weight:600;margin-bottom:4px;color:var(--text)}
+.form-group label .required{color:var(--primary)}
+.form-input{width:100%;padding:11px 14px;border:2px solid var(--border);border-radius:var(--radius-sm);font-size:.88rem;transition:all .3s;outline:none;font-family:inherit}
+.form-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-light)}
+textarea.form-input{resize:vertical;min-height:70px}
+.order-review{background:var(--bg);padding:14px;border-radius:var(--radius-sm);margin-bottom:16px}
+.order-review h4{font-size:.85rem;margin-bottom:8px}
+.order-review-item{display:flex;justify-content:space-between;font-size:.78rem;padding:3px 0}
+.order-review-total{display:flex;justify-content:space-between;font-weight:800;font-size:.95rem;color:var(--primary);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+
+/* Confirmation */
+.confirmation{text-align:center;padding:30px 20px}
+.confirmation .check-icon{width:70px;height:70px;background:var(--success);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:2rem;color:#fff;animation:scaleIn .5s ease}
+@keyframes scaleIn{from{transform:scale(0)}to{transform:scale(1)}}
+.confirmation h3{font-size:1.2rem;margin-bottom:8px;color:var(--success)}
+.confirmation p{font-size:.85rem;color:var(--text-light);margin-bottom:20px}
+.wa-confirm-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#25d366;color:#fff;border:none;border-radius:var(--radius);font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .3s}
+.wa-confirm-btn:hover{background:#128c7e;transform:translateY(-2px)}
+
+/* Footer */
+.footer{background:var(--text);color:#fff;padding:30px 16px 20px;text-align:center}
+.footer h3{font-size:1.1rem;margin-bottom:4px}
+.footer .tagline{font-size:.75rem;opacity:.7;margin-bottom:16px}
+.footer-info{font-size:.78rem;opacity:.8;line-height:1.8}
+.footer-info a{color:var(--primary-light);text-decoration:none}
+.footer-bottom{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:.68rem;opacity:.5}
+
+/* Toast */
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--text);color:#fff;padding:10px 20px;border-radius:25px;font-size:.82rem;font-weight:600;z-index:300;opacity:0;transition:all .4s;white-space:nowrap;box-shadow:var(--shadow-lg)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Responsive */
+@media(min-width:480px){.products-grid{gap:16px}}
+@media(min-width:600px){.products-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){
+.products-grid{grid-template-columns:repeat(4,1fr);gap:20px}
+.modal{border-radius:20px;max-height:85vh;margin:auto}
+.modal-overlay.active{align-items:center}
+}
+@media(min-width:1024px){
+.header-top{padding:16px 24px}
+.logo-section h1{font-size:1.8rem}
+.category-section,.search-section,.products-section{padding-left:24px;padding-right:24px}
+}
+
+/* Back to top */
+.back-top{position:fixed;bottom:148px;right:18px;width:40px;height:40px;background:var(--card);border:2px solid var(--border);border-radius:50%;font-size:1rem;cursor:pointer;z-index:98;display:none;align-items:center;justify-content:center;transition:all .3s;box-shadow:var(--shadow)}
+.back-top.show{display:flex}
+.back-top:hover{border-color:var(--primary);color:var(--primary)}
+
+/* Skeleton loading placeholder */
+.skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+<div class="header-top">
+<div class="logo-section">
+<h1>🛍️ Trending Sale</h1>
+<p>Get Premium Dress in Minimum Cost</p>
+</div>
+<div class="header-actions">
+<button class="header-btn" onclick="openCart()" aria-label="Open Cart">
+🛒
+<span class="header-cart-count" id="headerCartCount">0</span>
+</button>
+</div>
+</div>
+<div class="location-bar">
+<span>📍 Thane, Maharashtra | 📞 9664186669 | 🚚 Local Delivery Available</span>
+</div>
+</header>
+
+<!-- Announcement -->
+<div class="announcement">
+<span>✨ New Collection Arrived! Premium Quality at Lowest Prices ✨</span>
+</div>
+
+<!-- Category Filter -->
+<section class="category-section">
+<div class="category-scroll" id="categoryScroll">
+<button class="cat-btn active" data-category="all" onclick="filterCategory('all',this)">All Products</button>
+<button class="cat-btn" data-category="saree" onclick="filterCategory('saree',this)">🥻 Saree</button>
+<button class="cat-btn" data-category="suit" onclick="filterCategory('suit',this)">👗 Suit</button>
+</div>
+</section>
+
+<!-- Search -->
+<section class="search-section">
+<div class="search-wrap">
+<input type="text" class="search-box" id="searchBox" placeholder="Search products..." oninput="searchProducts(this.value)">
+</div>
+</section>
+
+<!-- Products -->
+<section class="products-section">
+<h2 class="section-title">Our Collection</h2>
+<div class="products-grid" id="productsGrid"></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<h3>🛍️ Trending Sale</h3>
+<p class="tagline">Get Premium Dress in Minimum Cost</p>
+<div class="footer-info">
+<p>📍 Thane, Maharashtra</p>
+<p>📞 <a href="tel:9664186669">9664186669</a></p>
+<p>📧 <a href="mailto:lkprajapati2457@gmail.com">lkprajapati2457@gmail.com</a></p>
+</div>
+<div class="footer-bottom">
+<p>© 2025 Trending Sale. All rights reserved.</p>
+</div>
+</footer>
+
+<!-- Floating Buttons -->
+<button class="floating-cart" id="floatingCart" onclick="openCart()" aria-label="Open Cart">
+🛒
+<span class="cart-count" id="floatingCartCount">0</span>
+</button>
+
+<a href="https://wa.me/919664186669?text=Hi%20Trending%20Sale!%20I%20have%20a%20query." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">💬</a>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">⬆</button>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Cart Modal -->
+<div class="modal-overlay" id="cartModal">
+<div class="modal">
+<div class="modal-header">
+<h2>🛒 Your Cart</h2>
+<button class="modal-close" onclick="closeCart()">✕</button>
+</div>
+<div class="modal-body" id="cartBody"></div>
+</div>
+</div>
+
+<!-- Checkout Modal -->
+<div class="modal-overlay" id="checkoutModal">
+<div class="modal">
+<div class="modal-header">
+<h2 id="checkoutTitle">💳 Payment & Checkout</h2>
+<button class="modal-close" onclick="closeCheckout()">✕</button>
+</div>
+<div class="modal-body" id="checkoutBody"></div>
+</div>
+</div>
+
+<script>
+// ====== PRODUCTS DATA ======
+const PRODUCTS = [
+{
+id: 1,
+name: "Red Saree with Premium Look",
+price: 280,
+category: "saree",
+image: "https://i.ibb.co/GvQJGs7D/Screenshot-2026-03-11-09-14-49-07-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "Elegant red saree with premium finish",
+badge: "Bestseller"
+},
+{
+id: 2,
+name: "Black Saree with Diamond",
+price: 600,
+category: "saree",
+image: "https://i.ibb.co/Xx5NzHL5/Screenshot-2026-03-11-09-15-15-21-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "New and trending black diamond saree",
+badge: "Trending"
+},
+{
+id: 3,
+name: "Classic Blue Silk Saree",
+price: 450,
+category: "saree",
+image: "https://i.ibb.co/GvQJGs7D/Screenshot-2026-03-11-09-14-49-07-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "Luxurious blue silk saree for special occasions",
+badge: "New"
+},
+{
+id: 4,
+name: "Golden Embroidered Saree",
+price: 520,
+category: "saree",
+image: "https://i.ibb.co/Xx5NzHL5/Screenshot-2026-03-11-09-15-15-21-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "Stunning golden embroidery work saree",
+badge: "Premium"
+},
+{
+id: 5,
+name: "Designer Pink Suit",
+price: 380,
+category: "suit",
+image: "https://i.ibb.co/GvQJGs7D/Screenshot-2026-03-11-09-14-49-07-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "Beautiful designer pink suit for all occasions",
+badge: "Popular"
+},
+{
+id: 6,
+name: "Royal Green Suit Set",
+price: 490,
+category: "suit",
+image: "https://i.ibb.co/Xx5NzHL5/Screenshot-2026-03-11-09-15-15-21-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "Royal green suit set with dupatta",
+badge: "Hot"
+},
+{
+id: 7,
+name: "Maroon Bridal Saree",
+price: 750,
+category: "saree",
+image: "https://i.ibb.co/GvQJGs7D/Screenshot-2026-03-11-09-14-49-07-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "Premium maroon bridal saree with heavy work",
+badge: "Bridal"
+},
+{
+id: 8,
+name: "Casual White Suit",
+price: 320,
+category: "suit",
+image: "https://i.ibb.co/Xx5NzHL5/Screenshot-2026-03-11-09-15-15-21-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "Elegant casual white suit for daily wear",
+badge: "Sale"
+},
+{
+id: 9,
+name: "Yellow Festive Saree",
+price: 410,
+category: "saree",
+image: "https://i.ibb.co/GvQJGs7D/Screenshot-2026-03-11-09-14-49-07-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "Bright yellow festive saree with border",
+badge: "Festive"
+},
+{
+id: 10,
+name: "Navy Blue Suit Combo",
+price: 550,
+category: "suit",
+image: "https://i.ibb.co/Xx5NzHL5/Screenshot-2026-03-11-09-15-15-21-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+desc: "Navy blue suit with matching dupatta combo",
+badge: "Combo"
+}
+];
+
+const SHOP = {
+name: "Trending Sale",
+phone: "919664186669",
+email: "lkprajapati2457@gmail.com",
+location: "Thane, Maharashtra",
+qrCode: "https://i.ibb.co/HDjzxYdW/Screenshot-2026-03-11-09-40-16-03-944a2809ea1b4cda6ef12d1db9048ed3.jpg",
+formspreeId: "xwpkpqjr"
+};
+
+// ====== CART STATE ======
+let cart = JSON.parse(localStorage.getItem('trendingSaleCart')) || [];
+let currentFilter = 'all';
+let currentSearch = '';
+
+// ====== INIT ======
+document.addEventListener('DOMContentLoaded', function() {
+renderProducts();
+updateCartCount();
+setupScrollEvents();
+});
+
+// ====== PRODUCTS ======
+function renderProducts() {
+const grid = document.getElementById('productsGrid');
+let filtered = PRODUCTS;
+
+if (currentFilter !== 'all') {
+filtered = filtered.filter(p => p.category === currentFilter);
+}
+if (currentSearch) {
+const s = currentSearch.toLowerCase();
+filtered = filtered.filter(p =>
+p.name.toLowerCase().includes(s) ||
+p.desc.toLowerCase().includes(s) ||
+p.category.toLowerCase().includes(s)
+);
+}
+
+if (filtered.length === 0) {
+grid.innerHTML = '<div class="no-products"><div class="emoji">🔍</div><p>No products found. Try a different search or category.</p></div>';
+return;
+}
+
+grid.innerHTML = filtered.map((p, i) => {
+const inCart = cart.find(c => c.id === p.id);
+return `
+<div class="product-card" style="animation-delay:${i * 0.05}s">
+${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+<div class="product-img-wrap">
+<img src="${p.image}" alt="${p.name}" loading="lazy">
+</div>
+<div class="product-info">
+<h3 class="product-name">${p.name}</h3>
+<p class="product-desc">${p.desc}</p>
+<p class="product-price">₹${p.price}</p>
+</div>
+<button class="add-btn ${inCart ? 'added' : ''}" id="addBtn${p.id}" onclick="addToCart(${p.id})">
+${inCart ? '✓ Added to Cart' : '🛒 Add to Cart'}
+</button>
+</div>`;
+}).join('');
+}
+
+function filterCategory(cat, btn) {
+currentFilter = cat;
+document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+renderProducts();
+}
+
+function searchProducts(val) {
+currentSearch = val.trim();
+renderProducts();
+}
+
+// ====== CART OPERATIONS ======
+function addToCart(id) {
+const product = PRODUCTS.find(p => p.id === id);
+if (!product) return;
+
+const existing = cart.find(c => c.id === id);
+if (existing) {
+existing.qty += 1;
+} else {
+cart.push({ id: product.id, name: product.name, price: product.price, image: product.image, qty: 1 });
+}
+saveCart();
+updateCartCount();
+renderProducts();
+showToast(`${product.name} added to cart!`);
+
+// Animate floating cart
+const fc = document.getElementById('floatingCart');
+fc.classList.remove('has-items');
+void fc.offsetWidth;
+fc.classList.add('has-items');
+}
+
+function updateQty(id, delta) {
+const item = cart.find(c => c.id === id);
+if (!item) return;
+item.qty += delta;
+if (item.qty <= 0) {
+cart = cart.filter(c => c.id !== id);
+}
+saveCart();
+updateCartCount();
+renderCartBody();
+renderProducts();
+}
+
+function removeFromCart(id) {
+const item = cart.find(c => c.id === id);
+cart = cart.filter(c => c.id !== id);
+saveCart();
+updateCartCount();
+renderCartBody();
+renderProducts();
+if (item) showToast(`${item.name} removed from cart`);
+}
+
+function saveCart() {
+localStorage.setItem('trendingSaleCart', JSON.stringify(cart));
+}
+
+function updateCartCount() {
+const count = cart.reduce((sum, c) => sum + c.qty, 0);
+document.getElementById('headerCartCount').textContent = count;
+document.getElementById('floatingCartCount').textContent = count;
+const fc = document.getElementById('floatingCart');
+fc.style.display = count > 0 ? 'flex' : 'none';
+}
+
+function getCartTotal() {
+return cart.reduce((sum, c) => sum + (c.price * c.qty), 0);
+}
+
+// ====== CART MODAL ======
+function openCart() {
+document.getElementById('cartModal').classList.add('active');
+document.body.style.overflow = 'hidden';
+renderCartBody();
+}
+
+function closeCart() {
+document.getElementById('cartModal').classList.remove('active');
+document.body.style.overflow = '';
+}
+
+function renderCartBody() {
+const body = document.getElementById('cartBody');
+
+if (cart.length === 0) {
+body.innerHTML = `
+<div class="cart-empty">
+<div class="emoji">🛒</div>
+<h3>Your cart is empty</h3>
+<p>Browse our collection and add items you love!</p>
+<button class="shop-btn" onclick="closeCart()">Continue Shopping</button>
+</div>`;
+return;
+}
+
+let html = '';
+cart.forEach(item => {
+html += `
+<div class="cart-item">
+<div class="cart-item-img">
+<img src="${item.image}" alt="${item.name}" loading="lazy">
+</div>
+<div class="cart-item-details">
+<p class="cart-item-name">${item.name}</p>
+<p class="cart-item-price">₹${item.price} each</p>
+<p class="cart-item-subtotal">Subtotal: ₹${item.price * item.qty}</p>
+<div class="cart-item-actions">
+<button class="qty-btn" onclick="updateQty(${item.id},-1)">−</button>
+<span class="qty-display">${item.qty}</span>
+<button class="qty-btn" onclick="updateQty(${item.id},1)">+</button>
+<button class="remove-btn" onclick="removeFromCart(${item.id})">🗑 Remove</button>
+</div>
+</div>
+</div>`;
+});
+
+const total = getCartTotal();
+const itemCount = cart.reduce((s, c) => s + c.qty, 0);
+
+html += `
+<div class="cart-summary">
+<div class="cart-summary-row">
+<span>Items (${itemCount})</span>
+<span>₹${total}</span>
+</div>
+<div class="cart-summary-row">
+<span>Delivery</span>
+<span style="color:var(--success)">To be confirmed</span>
+</div>
+<div class="cart-summary-row total">
+<span>Total</span>
+<span>₹${total}</span>
+</div>
+</div>
+<button class="checkout-btn" onclick="openCheckout()">Proceed to Payment →</button>`;
+
+body.innerHTML = html;
+}
+
+// ====== CHECKOUT ======
+function openCheckout() {
+if (cart.length === 0) return;
+closeCart();
+setTimeout(() => {
+document.getElementById('checkoutModal').classList.add('active');
+document.body.style.overflow = 'hidden';
+renderCheckoutBody();
+}, 300);
+}
+
+function closeCheckout() {
+document.getElementById('checkoutModal').classList.remove('active');
+document.body.style.overflow = '';
+}
+
+function renderCheckoutBody() {
+const body = document.getElementById('checkoutBody');
+const total = getCartTotal();
+document.getElementById('checkoutTitle').textContent = '💳 Payment & Checkout';
+
+let orderItemsHTML = '';
+cart.forEach(item => {
+orderItemsHTML += `
+<div class="order-review-item">
+<span>${item.name} × ${item.qty}</span>
+<span>₹${item.price * item.qty}</span>
+</div>`;
+});
+
+body.innerHTML = `
+<!-- Order Review -->
+<div class="order-review">
+<h4>📋 Order Summary</h4>
+${orderItemsHTML}
+<div class="order-review-total">
+<span>Grand Total</span>
+<span>₹${total}</span>
+</div>
+</div>
+
+<!-- Payment Section -->
+<div class="payment-section">
+<h3 style="font-size:1rem;margin-bottom:8px;">Scan & Pay ₹${total}</h3>
+<div class="qr-code-wrap">
+<img src="${SHOP.qrCode}" alt="UPI QR Code for Payment" loading="lazy">
+</div>
+<div class="payment-instructions">
+<strong>Payment Instructions:</strong>
+<ol class="payment-steps">
+<li><span class="step-num">1</span> Scan the QR code above using any UPI app (GPay, PhonePe, Paytm, etc.)</li>
+<li><span class="step-num">2</span> Pay the exact amount: <strong>₹${total}</strong></li>
+<li><span class="step-num">3</span> Note down the <strong>Transaction ID / UPI Reference Number</strong></li>
+<li><span class="step-num">4</span> Fill the form below and place your order</li>
+</ol>
+</div>
+</div>
+
+<!-- Checkout Form -->
+<form class="checkout-form" id="checkoutForm" onsubmit="submitOrder(event)">
+<div class="form-group">
+<label>Your Name <span class="required">*</span></label>
+<input type="text" class="form-input" id="custName" required placeholder="Enter your full name">
+</div>
+<div class="form-group">
+<label>Phone Number <span class="required">*</span></label>
+<input type="tel" class="form-input" id="custPhone" required placeholder="Enter 10-digit phone number" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number">
+</div>
+<div class="form-group">
+<label>Delivery Address <span class="required">*</span></label>
+<textarea class="form-input" id="custAddress" required placeholder="Full delivery address with landmark & pincode"></textarea>
+</div>
+<div class="form-group">
+<label>Transaction ID / UPI Reference <span class="required">*</span></label>
+<input type="text" class="form-input" id="custTxnId" required placeholder="Enter UPI transaction/reference number">
+</div>
+<div class="form-group">
+<label>Special Instructions (optional)</label>
+<textarea class="form-input" id="custNotes" placeholder="Any special requests or notes"></textarea>
+</div>
+
+<button type="submit" class="checkout-btn" id="placeOrderBtn">
+✅ Place Order
+</button>
+</form>`;
+}
+
+function submitOrder(e) {
+e.preventDefault();
+
+const name = document.getElementById('custName').value.trim();
+const phone = document.getElementById('custPhone').value.trim();
+const address = document.getElementById('custAddress').value.trim();
+const txnId = document.getElementById('custTxnId').value.trim();
+const notes = document.getElementById('custNotes').value.trim();
+const total = getCartTotal();
+
+if (!name || !phone || !address || !txnId) {
+showToast('Please fill all required fields!');
+return;
+}
+
+// Build order summary text
+let orderLines = '';
+let orderText = '';
+cart.forEach(item => {
+orderLines += `${item.name} × ${item.qty} = ₹${item.price * item.qty}\n`;
+orderText += `• ${item.name} × ${item.qty} = ₹${item.price * item.qty}\n`;
+});
+
+// ---- Send via Formspree (hidden form submission) ----
+const formData = new FormData();
+formData.append('_subject', `New Order from ${name} - Trending Sale`);
+formData.append('Shop', SHOP.name);
+formData.append('Customer Name', name);
+formData.append('Phone', phone);
+formData.append('Delivery Address', address);
+formData.append('Transaction ID', txnId);
+formData.append('Special Instructions', notes || 'None');
+formData.append('Order Items', orderText);
+formData.append('Grand Total', `₹${total}`);
+
+fetch(`https://formspree.io/f/${SHOP.formspreeId}`, {
+method: 'POST',
+body: formData,
+headers: { 'Accept': 'application/json' }
+}).then(res => {
+if (!res.ok) console.warn('Formspree submission may have failed');
+}).catch(err => console.warn('Formspree error:', err));
+
+// ---- Open WhatsApp ----
+let waMsg = `🛍️ *NEW ORDER - ${SHOP.name}*\n`;
+waMsg += `━━━━━━━━━━━━━━━━━━\n\n`;
+waMsg += `👤 *Customer:* ${name}\n`;
+waMsg += `📞 *Phone:* ${phone}\n`;
+waMsg += `📍 *Address:* ${address}\n`;
+waMsg += `💳 *Transaction ID:* ${txnId}\n`;
+if (notes) waMsg += `📝 *Notes:* ${notes}\n`;
+waMsg += `\n📦 *Order Items:*\n`;
+waMsg += `━━━━━━━━━━━━━━━━━━\n`;
+cart.forEach(item => {
+waMsg += `▸ ${item.name}\n   Qty: ${item.qty} × ₹${item.price} = ₹${item.price * item.qty}\n`;
+});
+waMsg += `━━━━━━━━━━━━━━━━━━\n`;
+waMsg += `💰 *Grand Total: ₹${total}*\n\n`;
+waMsg += `✅ Payment done via UPI\n`;
+waMsg += `Please confirm the order. 🙏`;
+
+const waUrl = `https://wa.me/${SHOP.phone}?text=${encodeURIComponent(waMsg)}`;
+window.open(waUrl, '_blank');
+
+// ---- Clear Cart & Show Confirmation ----
+cart = [];
+saveCart();
+updateCartCount();
+renderProducts();
+showConfirmation(name);
+}
+
+function showConfirmation(name) {
+const body = document.getElementById('checkoutBody');
+document.getElementById('checkoutTitle').textContent = '✅ Order Placed!';
+
+body.innerHTML = `
+<div class="confirmation">
+<div class="check-icon">✓</div>
+<h3>Order Placed Successfully!</h3>
+<p>Thank you, <strong>${name}</strong>! 🎉<br><br>
+<strong>${SHOP.name}</strong> has received your order. We will contact you on WhatsApp to confirm availability and delivery details.</p>
+<a href="https://wa.me/${SHOP.phone}?text=Hi%20${encodeURIComponent(SHOP.name)}!%20I%20just%20placed%20an%20order.%20Please%20confirm." target="_blank" class="wa-confirm-btn">
+💬 Message Us on WhatsApp
+</a>
+<br><br>
+<button class="shop-btn" onclick="closeCheckout()" style="display:inline-block;padding:10px 24px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Continue Shopping</button>
+</div>`;
+}
+
+// ====== TOAST ======
+function showToast(msg) {
+const t = document.getElementById('toast');
+t.textContent = msg;
+t.classList.add('show');
+clearTimeout(t._timeout);
+t._timeout = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ====== SCROLL EVENTS ======
+function setupScrollEvents() {
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', function() {
+backTop.classList.toggle('show', window.scrollY > 400);
+}, { passive: true });
+}
+
+// Close modals on overlay click
+document.getElementById('cartModal').addEventListener('click', function(e) {
+if (e.target === this) closeCart();
+});
+document.getElementById('checkoutModal').addEventListener('click', function(e) {
+if (e.target === this) closeCheckout();
+});
+</script>
+</body>
+</html>
